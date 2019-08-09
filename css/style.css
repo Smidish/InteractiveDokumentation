@@ -1,0 +1,65 @@
+body{
+  background-color: black;
+}
+
+button{
+  margin: auto;
+  background-color: black;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+
+  border-width: 2px;
+  border-style: solid;
+  border-image:
+    linear-gradient(
+      to right,
+      #46b27f,
+      #008b88
+    ) 1;
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  margin: auto;
+  color: white;
+  position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.wrapper{
+  padding: 5% 0;
+  width:100%;
+  height: 100%;
+}
+.app-container{
+    margin: auto;
+    padding: 10% 0;
+    width: 60%;
+    height: 90%;
+    display: block;
+    background-image: url("pics/greenblue.png");
+}
+
+.button-container{
+  margin: auto;
+  margin-top: 1%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.result-container{
+  display: none;
+}
+
+#logo_a{
+  height: 70px;
+}

@@ -42,12 +42,12 @@ var questions = [
     buttons: [
       {
         antwort: "Ein bisschen was",
-        id: 1,
+        id: 0,
         questionId: 3
       },
       {
         antwort: "Nichts oder wenig",
-        id: 2,
+        id: 1,
         questionId: 4
       }
     ]
@@ -58,8 +58,6 @@ var results = [
 "<p>lucky you</p>",
 
 "<p>well THAT SUCKS FOR YOU</p>",
-
-"",
 
 "",
 
@@ -78,20 +76,21 @@ function loadNextQuestion(quest_id){
    $( "#finge" ).empty();
    $('#btns').empty();
 
+   //checken, ob ein Endscreen kommen muss
    if(quest_id==3||quest_id==4){
       $('#finge').hide();
       $('#btns').hide();
       $('#result').show();
 
       switch(quest_id){
-        case 3: d=0; break;
+        case 3: id=0; break;
         case 4: id=1; break;
         case 66: id=2; break;
         case 77: id=3; break;
         case 88: id=4; break;
         default: loadNextQuestion(0); break;
       }
-
+      //Endscreen laden
       $('#result').append(results[id]);
   }
   else{

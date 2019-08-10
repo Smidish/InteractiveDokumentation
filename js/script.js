@@ -4,50 +4,55 @@ var questions = [
     id: 0,
     buttons: [
       {
-        antwort: "Fuck you",
+        antwort: "Cool",
         id: 0,
         questionId: 1
       },
       {
-        antwort: "Fuck you too",
+        antwort: "HELL YES!",
         id: 1,
-        questionId: 2
+        questionId: 1
       }
     ]
   },
   {
-    frage: "Aktion 1",
+    frage: "Was tust du momentan mit deinem Leben?",
     id: 1,
     buttons: [
       {
-        antwort: "Fuck you",
+        antwort: "Schüler/Azubi",
         id: 0,
-        questionId: 1
+        questionId: 2
       },
       {
-        antwort: "Fuck you too",
+        antwort: "Student",
         id: 1,
-        questionId: 2
+        questionId: 0
+      },
+      {
+        antwort: "Ich bin ein produktiver Teil der Gesellschaft und arbeite",
+        id: 2,
+        questionId: 0
       }
     ]
   },
   {
-    frage: "Aktion 2",
+    frage: "Wie viel Geld hast du am Ende des Monats über?",
     id: 2,
     buttons: [
       {
-        antwort: "Fuck you",
-        id: 0,
-        questionId: 1
+        antwort: "Ein bisschen was",
+        id: 1,
+        questionId: 3
       },
       {
-        antwort: "Fuck you too",
-        id: 1,
-        questionId: 2
+        antwort: "Nichts oder wenig",
+        id: 2,
+        questionId: 4
       }
     ]
   }
-]
+];
 
 //Erste Frage laden
 $(document).ready(function(){
@@ -55,7 +60,8 @@ $(document).ready(function(){
 });
 
 function loadNextQuestion(quest_id){
-  //shizzle leeren
+   //shizzle leeren
+   var id = 0;
    $( "#finge" ).empty();
    $('#btns').empty();
 
@@ -64,11 +70,14 @@ function loadNextQuestion(quest_id){
 
    //Buttons zur Frage generieren
    for(i=0; i< questions[quest_id].buttons.length; i++){
-      $('#btns').append("<button id="+i+">"+questions[quest_id].buttons[i].antwort+"</button>");
-      var btnid = "#"+i;
-      var questid = questions[quest_id].buttons[i].questionId;
-      $(btnid).click(function() {
-          loadNextQuestion(questions[quest_id].buttons[this.id].questionId);
+      id = questions[quest_id].buttons[i].id;
+      $('#btns').append("<button id="+id+">"+questions[quest_id].buttons[i].antwort+"</button>");
+
+      //Buttons Funktion zur Weiterleitung an die nächst Frage mitgeben
+      $('#'+id).click(function() {
+        var localid = this.id;
+        var currentquestionid = quest_id;
+        loadNextQuestion(questions[quest_id].buttons[this.id].questionId);
       });
     }
 }

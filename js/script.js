@@ -54,6 +54,19 @@ var questions = [
   }
 ];
 
+var results = [
+"<p>lucky you</p>",
+
+"<p>well THAT SUCKS FOR YOU</p>",
+
+"",
+
+"",
+
+"",
+
+""];
+
 //Erste Frage laden
 $(document).ready(function(){
   loadNextQuestion(0);
@@ -65,6 +78,23 @@ function loadNextQuestion(quest_id){
    $( "#finge" ).empty();
    $('#btns').empty();
 
+   if(quest_id==3||quest_id==4){
+      $('#finge').hide();
+      $('#btns').hide();
+      $('#result').show();
+
+      switch(quest_id){
+        case 3: d=0; break;
+        case 4: id=1; break;
+        case 66: id=2; break;
+        case 77: id=3; break;
+        case 88: id=4; break;
+        default: loadNextQuestion(0); break;
+      }
+
+      $('#result').append(results[id]);
+  }
+  else{
    //Frage updaten
    $('#finge').append("<p>"+ questions[quest_id].frage +"</p>");
 
@@ -80,4 +110,5 @@ function loadNextQuestion(quest_id){
         loadNextQuestion(questions[quest_id].buttons[this.id].questionId);
       });
     }
+  }
 }

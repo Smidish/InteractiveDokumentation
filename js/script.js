@@ -55,15 +55,54 @@ var questions = [
 ];
 
 var results = [
-"<p>lucky you</p>",
+{
+  name: "Playful: Sorgloses Wochenende",
+  text: "<p>lucky you</p>"
+},
 
-"<p>well THAT SUCKS FOR YOU</p>",
+{
+  name: "Dreamy: Urlaubsvorfreude",
+  text: "<p>lucky you</p>"
+},
+{
+  name: "Helpful: Charity",
+  text: "<p>lucky you</p>"
+},
+{
+  name: "Useful: Notgroschen",
+  text: "<p>lucky you</p>"
+},
+{
+  name: "Serious: Altersvorsorge",
+  text: "<p>lucky you</p>"
+}];
 
-"",
+var tools = [
+{
+  name: "Sporty",
+  text: "<p>lucky you</p>"
+},
 
-"",
-
-""];
+{
+  name: "Foodie",
+  text: "<p>lucky you</p>"
+},
+{
+  name: "Sleepy",
+  text: "<p>lucky you</p>"
+},
+{
+  name: "Produktiv",
+  text: "<p>lucky you</p>"
+},
+{
+  name: "Automatisch",
+  text: "<p>lucky you</p>"
+},
+{
+  name: "Selbstkontrolle",
+  text: "<p>lucky you</p>"
+}];
 
 //Erste Frage laden
 $(document).ready(function(){
@@ -75,6 +114,9 @@ function loadNextQuestion(quest_id){
    var id = 0;
    $( "#finge" ).empty();
    $('#btns').empty();
+   $('#finge').show();
+   $('#btns').show();
+   $('#result').hide();
 
    //checken, ob ein Endscreen kommen muss
    if(quest_id==3||quest_id==4){
@@ -91,7 +133,7 @@ function loadNextQuestion(quest_id){
         default: loadNextQuestion(0); break;
       }
       //Endscreen laden
-      $('#result').append(results[id]);
+      $('#what').append(results[id].text);
   }
   else{
    //Frage updaten
@@ -111,3 +153,7 @@ function loadNextQuestion(quest_id){
     }
   }
 }
+
+$( function() {
+    $( "#datepicker" ).datepicker();
+  } );

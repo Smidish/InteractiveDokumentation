@@ -34,6 +34,29 @@ p{
   margin-right: -50%;
   transform: translate(-50%, -50%);
 }
+
+input{
+  margin: 0;
+  padding: 0;
+  border-width: 2px;
+  border-style: solid;
+  border-image:
+    linear-gradient(
+      to right,
+      #46b27f,
+      #008b88
+    ) 1;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  border-collapse: True;
+  background: transparent;
+  color: white;
+  max-height:25px;
+  min-height: 20px;
+
+}
+
 .wrapper{
   padding: 5% 0;
   width:100%;
@@ -58,7 +81,39 @@ p{
 }
 
 .result-container{
-  
+ height: 100%;
+ width: 60%;
+ display: block;
+ margin: auto;
+ padding: 10% 0;
+}
+
+.how, .what, .action{
+  padding: 25px 0px 20px 0px;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-image:
+    linear-gradient(
+      to right,
+      #46b27f,
+      #008b88
+    ) 1;
+}
+
+.action{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.input_content{
+  height: 100%;
+  width:100%;
+  margin: 15px 0px 5px 0px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 #logo_a{

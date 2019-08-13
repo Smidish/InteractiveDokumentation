@@ -7,21 +7,43 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="js/jquery-3.4.1.js"></script>
-
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 </head>
 <body>
   <img src="css/pics/finge.png"  id="logo_a" alt="finge_logo" onclick="loadNextQuestion(0)"/>
   <div class="wrapper">
-
-
     <div class="app-container" id="finge">
     </div>
     <div class="button-container" id="btns">
     </div>
   </div>
   <div class="result-container" id="result">
+    <div class="what" id="what">
+    </div>
+    <div class="how" id="how">
+    </div>
+    <div class="action">
+      <div class="input_content"><p> Zielname </p><input type="text" name="goal" id="i_goal"></div>
+      <div class="input_content"><p> Beschreibung </p><input type="text" name="beschreibung" id="i_beschreibung"></p></div>
+      <div class="input_content"><p> Zielbetrag </p><input type="number" name="sum" id="i_sum"></div>
+      <div class="input_content"><p> Sparregel </p><input type="text" name="tool" id="i_tool"></div>
+      <div class="input_content"><p> Betrag, der gespart werden soll </p><input type="number" name="sum" id="i_sum"></p></div>
+      <div class="input_content"><p> Startdatum: </p><input type="text" id="datepicker"></div>
+    </div>
+    <div title="Add to Calendar" class="addeventatc">
+      Add to Calendar
+      <span class="start">08/27/2019 08:00 AM</span>
+      <span class="end">08/27/2019 10:00 AM</span>
+      <span class="timezone">America/Los_Angeles</span>
+      <span class="title">Summary of the event</span>
+      <span class="description">Description of the event</span>
+      <span class="location">Location of the event</span>
   </div>
+  </div>
+
   </div>
 <script src="js/script.js"></script>
 </body>

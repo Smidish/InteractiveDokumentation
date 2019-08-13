@@ -80,39 +80,105 @@ var results = [
 var tools = [
 {
   name: "Sporty",
-  text: "<p>lucky you</p>"
+  tool: "Spare jedes Mal, wenn du eine Aktivität vollendet oder ein Ziel erreicht hast",
+  text: "<p>lucky you</p>",
+  frage: "Ich möchte mehr Sport machen."
 },
 
 {
   name: "Foodie",
-  text: "<p>lucky you</p>"
+  tool: "Spare für jedes Gemüse auf deinem Kassenzettel",
+  text: "<p>lucky you</p>",
+  frage: "Ich möchte mich gesünder ernähren."
 },
 {
   name: "Sleepy",
-  text: "<p>lucky you</p>"
+  tool: "Spare, wenn du deinen Schlafrhythmus einhälst",
+  text: "<p>lucky you</p>",
+  frage: "Ich möchte einen gesunden Schlafrhythmus etablieren."
 },
 {
   name: "Produktiv",
-  text: "<p>lucky you</p>"
+  tool: "Spare, wenn du eine Task abgehakt hast",
+  text: "<p>lucky you</p>",
+  frage: "Ich möchte produktiver sein."
 },
 {
   name: "Automatisch",
-  text: "<p>lucky you</p>"
+  tool: "Lege dir einen Dauerauftrag an, der das Sparen für dich übernimmt",
+  text: "<p>lucky you</p>",
+  frage: "Ich möchte mich so wenig wie möglich um mein Geld kümmern."
 },
 {
   name: "Selbstkontrolle",
-  text: "<p>lucky you</p>"
+  tool: "??????????????????????????",
+  text: "<p>lucky you</p>",
+  frage: "Ich möchte weniger Geld für unnötigen Kram ausgeben."
 }];
+
+function toolfrage(){
+  $("#finge").empty();
+  $('#btns').empty();
+  $('#finge').show();
+  $('#btns').show();
+  $('#result').hide();
+  $('#finge').append("<p>Welche Aussage trifft eher auf dich zu?</p>");
+
+  //Buttons zur Frage generieren
+  for(i=0; i< tools.length; i++){
+     $('#btns').append("<button id="+i+">"+tools[i].frage+"</button>");
+     $('#'+i).click(function() {
+      tool_id = this.id;
+      console.log("currentquestionid " + endresultid + " id " + id);
+      loadResults();
+     });
+   }
+}
+
+var id;
+var tool_id;
+var endresultid;
+
 
 //Erste Frage laden
 $(document).ready(function(){
   loadNextQuestion(0);
 });
 
+function loadResults(){
+  $('#finge').hide();
+  $('#btns').hide();
+  $('#result').show();
+  $('#addeventatc1').hide();
+
+
+  switch(endresultid){
+    case 3: id=0; break;
+    case 4: id=1; break;
+    case 66: id=2; break;
+    case 77: id=3; break;
+    case 88: id=4; break;
+    default: loadNextQuestion(0); break;
+  }
+
+  //Text laden
+  $('#what').append(results[id].name);
+  $('#what').append(results[id].text);
+
+  //Spartooltext laden
+  //$("how").append(tools[tool_id].name)
+  //$("how").append(tools[tool_id].text)
+
+  //input fields laden
+  $("#i_goal").val(results[id].name);
+  $("#i_tool").val(tools[tool_id].tool);
+}
+
 function loadNextQuestion(quest_id){
    //shizzle leeren
-   var id = 0;
-   $( "#finge" ).empty();
+   id = 0;
+   tool_id = 0;
+   $("#finge").empty();
    $('#btns').empty();
    $('#finge').show();
    $('#btns').show();
@@ -120,23 +186,10 @@ function loadNextQuestion(quest_id){
 
    //checken, ob ein Endscreen kommen muss
    if(quest_id==3||quest_id==4){
-      $('#finge').hide();
-      $('#btns').hide();
-      $('#result').show();
-
-      switch(quest_id){
-        case 3: id=0; break;
-        case 4: id=1; break;
-        case 66: id=2; break;
-        case 77: id=3; break;
-        case 88: id=4; break;
-        default: loadNextQuestion(0); break;
-      }
-      //Endscreen laden
-      $('#what').append(results[id].text);
-  }
-  else{
-   //Frage updaten
+     endresultid = quest_id;
+     toolfrage();
+   }else{
+   //ansonsten Frage updaten
    $('#finge').append("<p>"+ questions[quest_id].frage +"</p>");
 
    //Buttons zur Frage generieren
@@ -154,6 +207,22 @@ function loadNextQuestion(quest_id){
   }
 }
 
-$( function() {
-    $( "#datepicker" ).datepicker();
-  } );
+//Checken, ob Input Felder ausgefüllt sind und Values an den Kalender-Button weitergeben
+$(document).on('change','input', function(){
+  if($("#i_beschreibung").val() != "" && $("#i_sum").val() != null && $("#i_sum_t").val() != null && $("#datepicker").val() != ""){
+    var date = $("#datepicker").val() + " 20:00"
+    var title = results[id].name;
+    var description = "Zielbetrag: "+ $("#i_sum_t").val() +"<br> Sparregel: " + $("#i_tool").val() + "<br>Jedes Mal, wenn du diese Regel triggerst, füge deinem Ziel " + $("#i_sum").val() + " Euro hinzu.";
+    console.log(date + title + description);
+    $("#adddate").html(date);
+    $("#addtitle").html(title);
+    $("#adddis").html(description);
+
+    $('#addeventatc1').show();
+  }
+});
+
+
+$(function() {
+  $("#datepicker" ).datepicker();
+  });

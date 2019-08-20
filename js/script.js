@@ -358,12 +358,12 @@ function createCanvas(){
   ctx.fillStyle = "white";
   ctx.textAlign = "center";
 
-  var zielname = $('#i_goal').val();
-  var beschreibung = $('#i_beschreibung').val();
-  var zielbetrag = $('#i_sum_t').val();
-  var sparregel = $('#i_tool').val();
-  var betrag = $('#i_sum').val();
-  var datum = $('#datepicker').val();
+  var zielname = "Zielname  " + $('#i_goal').val();
+  var beschreibung = "Beschreibung  " + $('#i_beschreibung').val();
+  var zielbetrag = "Zielbetrag  " + $('#i_sum_t').val() + "€";
+  var sparregel = "Sparregel  " + $('#i_tool').val();
+  var betrag = "Sparschritte  " + $('#i_sum').val() + "€";
+  var datum = "Startdatum   " + $('#datepicker').val();
 
   ctx.fillText(zielname, canvas.width/2, canvas.height/7*1);
   ctx.fillText(beschreibung, canvas.width/2, canvas.height/7*2);

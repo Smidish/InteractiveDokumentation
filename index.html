@@ -31,15 +31,16 @@
     </div>
   </div> -->
   <div class="end_btns" id="end_btns">
-    <button id="btn_info" onclick="window.location = 'finge.html'">Was ist Finge?</button>
-    <button id="btn_trailer" onclick="location.href='https://vimeo.com/354670626';">Produkttrailer</button>
-    <button type="submit" id="btn_doku" onclick="window.open('BA_SS19_Finge_Hinterreiter-Wilke.pdf')">Finge Dokumentation</button>
-    <button id="btn_download" onclick="downloadCanvas(this);">Mission als Screensaver downloaden</button>
+    <button class="end_btn" id="btn_info" onclick="window.location = 'finge.html'">Was ist Finge?</button>
+    <button class="end_btn" id="btn_trailer" onclick="location.href='https://vimeo.com/354670626';">Produkttrailer</button>
+    <button class="end_btn" type="submit" id="btn_doku" onclick="window.open('BA_SS19_Finge_Hinterreiter-Wilke.pdf')">Finge Dokumentation</button>
+    <button class="end_btn" id="btn_download" onclick="downloadCanvas(this);">Mission als Screensaver downloaden</button>
 <a id="download" download="MeineMission.png">
     <!-- <button id="btn_demo">Finge Demo</button> -->
   </div>
 
   <div class="action" id="action">
+    <h3> Zielerstellung </h3>
       <div class="input_content"><p> Zielname </p><input type="text" name="goal" id="i_goal" readonly></div>
       <div class="input_content"><p> Beschreibung deines persönlichen Ziels</p><input type="text" name="beschreibung" id="i_beschreibung"></p></div>
       <div class="input_content"><p> Zielbetrag </p><input type="number" name="sum_t" id="i_sum_t"></div>
@@ -61,6 +62,6 @@
   </div>
   </div>
 </div>
-  <a href="impressum.html">Kontakt & Impressum</a>
+  <a id="impressum" href="impressum.html"><img class="mail" src="css/pics/mail.svg"/></a>
 </body>
 </html>

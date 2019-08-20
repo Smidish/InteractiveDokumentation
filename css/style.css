@@ -174,6 +174,19 @@ input:hover{
   padding: 10% 0;
 }
 
+.end_btns{
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.end_btn{
+  width:49% !important;
+
+}
+
+
 ::selection {
   background: #ffb94b; /* WebKit/Blink Browsers */
 }
@@ -184,11 +197,14 @@ input:hover{
 
 #impressum {
   position: absolute;
-  bottom: 0px;
+  top: 0px;
   margin-right: auto;
   margin-left: auto;
   right: 0%;
-
+}
+.mail{
+  height: 30px;
+  margin: 30px;
 }
 
 
@@ -348,6 +364,16 @@ input:hover{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  .end_btns{
+    margin-top: 10px;
+    display: block;
+  }
+
+  .end_btn{
+    width:100% !important;
+
   }
 
   .logo_a{

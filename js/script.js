@@ -194,7 +194,7 @@ var tools = [
 {
   name: "Sporty",
   tool: "Aktivität vollendet oder ein Ziel erreicht",
-  text: "<p style='display: contents'>Was gibt es besseres, als von Endorphinen durchflutet, völlig ausgepowert unter die Dusche zu springen? Sich direkt danach nicht nur mit energiegebende Essen zu belohnen, sondern auch deinem finanziellen Ziel ein Stückchen näher gekommen zu sein! Jedes Mal, wenn du eine Aktivität vollendet oder ein persönliches Ziel erreicht hast, darfst du dir deinen angegebenen Betrag auf dein mentales Zielkonto überweisen (oder in dein Sportschwein stecken).</p>",
+  text: "<p style='display: contents'>Was gibt es besseres, als von Endorphinen durchflutet, völlig ausgepowert, unter die Dusche zu springen? Sich direkt danach nicht nur mit energiegebendem Essen zu belohnen, sondern auch deinem finanziellen Ziel ein Stückchen näher gekommen zu sein! Jedes Mal, wenn du eine Aktivität vollendet oder ein persönliches Ziel erreicht hast, darfst du dir deinen angegebenen Betrag auf dein mentales Zielkonto überweisen (oder in dein Sportschwein stecken).</p>",
   frage: "Ich möchte mehr Sport machen."
 },
 
@@ -232,6 +232,7 @@ var endresultid;
 
 //YAY! CODE!
 // I know, I was too lazy to put it in an extra file.
+
 //Erste Frage laden
 $(document).ready(function(){
   loadNextQuestion(0);
@@ -270,6 +271,7 @@ function loadNextQuestion(quest_id){
   }
 }
 
+//Frage für die Regelbestimmung laden
 function toolfrage(){
   $("#finge").empty();
   $('#btns').empty();
@@ -289,13 +291,13 @@ function toolfrage(){
    }
 }
 
+//Ergebnisse anzeigen
 function loadResults(){
   $('#wrapper').hide();
   $('#finge').hide();
   $('#btns').hide();
   $('#result').show();
   $('#addeventatc1').hide();
-
 
   switch(endresultid){
     case 101: id=0; break;
@@ -324,7 +326,6 @@ $(document).on('change','input', function(){
     $("#adddate").html(date);
     $("#addtitle").html(title);
     $("#adddis").html(description);
-
     $('#addeventatc1').show();
   }
 });
@@ -336,11 +337,13 @@ $(function() {
 
 
 $( "#btn_demo" ).click(function() {
-    //TODO DEMO FUNCTION
+    //TODO DEMO FUNCTION?
+    //lel
 });
 
-function createCanvas(){
 
+//Eingaben auf Canvas packen und als PNG downloaden
+function createCanvas(){
   var canvas = document.createElement('canvas');
   canvas.setAttribute("id", "canvaaas");
   h = $(window).height();
@@ -380,12 +383,12 @@ function downloadCanvas(el) {
 }
 
 function downloadf(canvas, filename) {
-  /// create an "off-screen" anchor tag
+  /// a tag
   var lnk = document.createElement('a'), e;
   lnk.download = filename;
   lnk.href = canvas.toDataURL("image/png;base64");
 
-  /// create a "fake" click-event to trigger the download
+  ///fake click-event
   if (document.createEvent) {
     e = document.createEvent("MouseEvents");
     e.initMouseEvent("click", true, true, window,

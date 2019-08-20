@@ -6,7 +6,7 @@ body{
 button{
   margin: auto;
   margin-top: 10px;
-  width: 100%;
+  width: 20%;
   background-color: black;
   color: white;
   font-family: 'Raleway', sans-serif;
@@ -37,17 +37,23 @@ button:hover{
 }
 
 p{
-  width: 80%;
+  width: 70%;
   font-family: 'Raleway', sans-serif;
   color: white;
 }
 h2, h3{
   font-family: 'Raleway', sans-serif;
   color: #fff;
+  margin-top: 30px;
 }
 
-#logo_a{
+.logo_a{
   height: 70px;
+}
+
+#wrapper_finge{
+  margin-left:20px;
+  margin-right: 20px;
 }
 
 ::selection {
@@ -99,13 +105,13 @@ h2, h3{
     color: white;
     font-size: 0.9rem;
   }
-  h2, h3{
+  h1, h2, h3{
     font-family: 'Raleway', sans-serif;
     color: #fff;
   }
 
 
-  #logo_a{
+  .logo_a{
     height: 70px;
   }
   ::selection {
@@ -114,4 +120,28 @@ h2, h3{
   ::-moz-selection {
     background: #ffb94b; /* Gecko Browsers */
   }
+
+  #wrapper_finge{
+    margin-left:10px;
+    margin-right: 10px;
+  }
+}
+
+nav#dot-nav {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+
+nav#dot-nav a {
+  border: 1px solid #121212;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  display: block;
+  margin: 10px;
+}
+
+nav#dot-nav a.active, nav#dot-nav a:first-child {
+  background: #121212;
 }

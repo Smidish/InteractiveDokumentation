@@ -51,6 +51,14 @@ h2, h3{
   color: #fff;
 }
 
+a{
+  color: #fff;
+  font-family: Raleway;
+}
+a:hover{
+  color: #ffb94b;
+}
+
 input{
   margin: 0;
   padding: 0;
@@ -153,7 +161,7 @@ input:hover{
   align-items: center;
 }
 
-#logo_a{
+.logo_a{
   height: 70px;
 }
 
@@ -172,6 +180,17 @@ input:hover{
 ::-moz-selection {
   background: #ffb94b; /* Gecko Browsers */
 }
+
+
+#impressum {
+  position: absolute;
+  bottom: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  right: 0%;
+
+}
+
 
 @media only screen and (max-width: 700px) {
   /* For mobile phones: */
@@ -331,7 +350,7 @@ input:hover{
     justify-content: flex-start;
   }
 
-  #logo_a{
+  .logo_a{
     height: 70px;
   }
 

@@ -17,7 +17,7 @@
   <script src="js/script.js"></script>
 </head>
 <body>
-  <img src="css/pics/finge.png"  id="logo_a" alt="finge_logo" onclick="loadNextQuestion(0)"/>
+  <img src="css/pics/finge.png"  class="logo_a" alt="finge_logo" onclick="loadNextQuestion(0)"/>
   <div class="wrapper" id="wrapper">
     <div class="app-container" id="finge">
     </div>
@@ -31,24 +31,14 @@
     </div>
   </div> -->
   <div class="end_btns" id="end_btns">
-    <button id="btn_luck" onclick="window.location = 'happymoney.html'">Wie Geld glücklich macht</button>
+    <button id="btn_info" onclick="window.location = 'finge.html'">Was ist Finge?</button>
+    <button id="btn_trailer" onclick="location.href='https://vimeo.com/354670626';">Produkttrailer</button>
     <button type="submit" id="btn_doku" onclick="window.open('BA_SS19_Finge_Hinterreiter-Wilke.pdf')">Finge Dokumentation</button>
-    <button id="btn_trailer" onclick="location.href='https://www.youtube.com/watch?v=ERw2kMMHNmE';">Produkttrailer</button>
     <button id="btn_download" onclick="downloadCanvas(this);">Mission als Screensaver downloaden</button>
 <a id="download" download="MeineMission.png">
     <!-- <button id="btn_demo">Finge Demo</button> -->
   </div>
-  <div title="Add to Calendar" class="addeventatc">
-    Nudge me!
-    <span class="start" id="adddate">30/08/2019 20:00</span>
-    <span class="timezone">Europe/Paris</span>
-    <span class="title" id="addtitle"></span>
-    <span class="description" id="adddis"></span>
-    <span class="organizer">Finge</span>
-    <span class="all_day_event">false</span>
-    <span class="alarm_reminder">5</span>
 
-</div>
   <div class="action" id="action">
       <div class="input_content"><p> Zielname </p><input type="text" name="goal" id="i_goal" readonly></div>
       <div class="input_content"><p> Beschreibung deines persönlichen Ziels</p><input type="text" name="beschreibung" id="i_beschreibung"></p></div>
@@ -56,9 +46,21 @@
       <div class="input_content"><p> Sparregel </p><input type="text" name="tool" id="i_tool" readonly></div>
       <div class="input_content"><p> Betrag, den du jedes Mal sparen willst </p><input type="number" name="sum" id="i_sum"></p></div>
       <div class="input_content"><p> Startdatum für deine Mission </p><input type="text" id="datepicker" class=""></div>
-  </div>
 
+      <div title="Add to Calendar" class="addeventatc">
+        Nudge me!
+        <span class="start" id="adddate">30/08/2019 20:00</span>
+        <span class="timezone">Europe/Paris</span>
+        <span class="title" id="addtitle"></span>
+        <span class="description" id="adddis"></span>
+        <span class="organizer">Finge</span>
+        <span class="all_day_event">false</span>
+        <span class="alarm_reminder">5</span>
 
+    </div>
   </div>
+  </div>
+</div>
+  <a href="impressum.html">Kontakt & Impressum</a>
 </body>
 </html>
